@@ -4,6 +4,7 @@ import './App.css';
 import Nav from './components/Nav';
 import SiteTitle from './components/SiteTitle';
 import Articles from './components/Articles';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
@@ -18,7 +19,9 @@ class App extends Component {
             <Articles />
           </article>
         </main>
-        <footer className="footer">Footer here</footer>
+        <footer className="footer">
+          <Footer />
+        </footer>
       </div>
     );
   }
