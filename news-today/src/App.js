@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
-import { Route, NavLink, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 import Nav from './components/Nav';
 import SiteTitle from './components/SiteTitle';
-import Articles from './components/Articles';
+import ArticlesList from './components/ArticlesList';
 import Footer from './components/Footer';
+import Article from './components/Article';
 
 class App extends Component {
+  state = {
+    articleData: []
+  };
+
+  componentDidMount = () => {
+    this.fetchArticles().then(({ data: { articles } }) => {
+      this.setState({ articleData: articles });
+    });
+  };
+
   render() {
+    // const articleData = this.state.articleData;
     return (
       <div className="App-container">
         <header className="header">
@@ -16,7 +29,20 @@ class App extends Component {
         </header>
         <main className="main-container">
           <article className="article-container">
-            <Articles />
+            <Switch>
+              <Route
+                exact
+                path="/articles/:article_id"
+                render={props => <Article {...props} />}
+              />
+              <Route
+                exact
+                path="/"
+                render={() => (
+                  <ArticlesList articleData={this.state.articleData} />
+                )}
+              />
+            </Switch>
           </article>
         </main>
         <footer className="footer">
@@ -25,6 +51,11 @@ class App extends Component {
       </div>
     );
   }
+  fetchArticles = () => {
+    return axios
+      .get('https://ben-nc-news.herokuapp.com/API/articles')
+      .catch(err => err);
+  };
 }
 
 export default App;
