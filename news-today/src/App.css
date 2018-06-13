@@ -7,12 +7,6 @@
 
 /* Split css into components later */
 
-.header {
-  background-color: pink;
-  display: flex;
-  justify-content: space-between;
-}
-
 .footer {
   background-color: gray;
 }

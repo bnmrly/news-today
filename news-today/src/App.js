@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import './components/Articles.css';
 import Nav from './components/Nav';
 import SiteTitle from './components/SiteTitle';
 import ArticlesList from './components/ArticlesList';
