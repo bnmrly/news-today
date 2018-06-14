@@ -1,12 +1,6 @@
 .App-container {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 12vh auto 8vh;
+  grid-template-rows: 10vh 7vh auto 6vh;
   background-color: lightgray;
-}
-
-/* Split css into components later */
-
-.footer {
-  background-color: gray;
 }
