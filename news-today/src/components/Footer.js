@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Route, NavLink } from 'react-router-dom';
+import './Footer.css';
 
 class Footer extends Component {
   render() {

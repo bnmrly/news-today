@@ -35,7 +35,6 @@ class Article extends Component {
     const { data } = await axios.get(
       `https://ben-nc-news.herokuapp.com/API/articles/${article_id}`
     );
-
     return data;
   };
 }
