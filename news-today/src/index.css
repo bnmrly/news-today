@@ -357,3 +357,8 @@ ul {
 a {
   text-decoration: none;
 }
+
+.link,
+.link:visited {
+  color: black;
+}
