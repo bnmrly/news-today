@@ -5,7 +5,10 @@ class Article extends Component {
   state = {
     belongs_to: '',
     body: '',
-    title: ''
+    comments: 0,
+    title: '',
+    username: '',
+    votes: 0
   };
 
   componentDidMount = () => {
@@ -14,20 +17,31 @@ class Article extends Component {
         params: { article_id }
       }
     } = this.props;
-    // can add more props later
-    this.fetchArticle(article_id).then(({ belongs_to, body, title }) => {
-      this.setState({ belongs_to, body, title });
-    });
+    this.fetchArticle(article_id).then(
+      ({
+        belongs_to,
+        body,
+        comments,
+        title,
+        created_by: { username },
+        votes
+      }) => {
+        this.setState({ belongs_to, body, comments, title, username, votes });
+      }
+    );
   };
 
   render() {
-    const { belongs_to, body, title } = this.state;
+    const { belongs_to, body, comments, title, username, votes } = this.state;
     return (
-      <div>
-        <p>{belongs_to}</p>
+      <section className="article-individual">
+        <h3>{title}</h3>
         <p>{body}</p>
-        <p>{title}</p>
-      </div>
+        <p>Topic: {belongs_to}</p>
+        <p>Comments: {comments}</p>
+        <p>Votes: {votes}</p>
+        <p>Username: {username}</p>
+      </section>
     );
   }
 
