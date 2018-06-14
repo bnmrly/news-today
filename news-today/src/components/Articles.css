@@ -1,4 +1,6 @@
 .articles-all {
   background-color: rgb(185, 178, 180);
-  border: 1px solid black;
+  /* background: radial-gradient(circle, white 10%, transparent 10%),
+    radial-gradient(circle, black 10%, white 10%) 20px 20px;
+  background-size: 1rem 1rem; */
 }

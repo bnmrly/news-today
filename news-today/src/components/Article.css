@@ -1,3 +1,7 @@
 .article-individual {
   background-color: rgb(147, 237, 240);
+  background-color: lightgray;
+  /* background: radial-gradient(circle, white 10%, transparent 10%),
+    radial-gradient(circle, pink 10%, white 10%) 20px 20px;
+  background-size: 1rem 1rem; */
 }
