@@ -1,0 +1,32 @@
+.nav-list {
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  font-size: 1.25rem;
+  background-color: rgb(128, 155, 158);
+}
+
+.nav-link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-link:not(.active) {
+  /* background-color: #111; */
+  /* background-color: rgb(83, 80, 80); */
+  background-color: rgb(128, 155, 158);
+}
+
+.nav-link:hover:not(.active) {
+  background-color: rgb(182, 171, 171);
+}
+
+.nav-link-active {
+  background-color: #6d746d;
+}

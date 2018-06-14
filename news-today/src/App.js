@@ -21,13 +21,14 @@ class App extends Component {
   };
 
   render() {
-    // const articleData = this.state.articleData;
     return (
       <div className="App-container">
         <header className="header">
           <SiteTitle />
-          <Nav />
         </header>
+        <nav className="nav">
+          <Nav />
+        </nav>
         <main className="main-container">
           <article className="article-container">
             <Switch>
@@ -39,6 +40,13 @@ class App extends Component {
               <Route
                 exact
                 path="/"
+                render={() => (
+                  <ArticlesList articleData={this.state.articleData} />
+                )}
+              />
+              <Route
+                exact
+                path="/articles"
                 render={() => (
                   <ArticlesList articleData={this.state.articleData} />
                 )}
