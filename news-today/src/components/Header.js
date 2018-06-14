@@ -7,7 +7,12 @@ class SiteTitle extends Component {
     return (
       <div className="header-title">
         <NavLink className="header-title-link" to="/">
-          News Today
+          {/* <img
+            className="logo"
+            src="https://fontmeme.com/permalink/180614/fa7002ea0aaca91c89a03015b0fc30f3.png"
+            alt=""
+          /> */}
+          <img className="site-logo" src="site-logo.png" alt="site logo" />
         </NavLink>
       </div>
     );
