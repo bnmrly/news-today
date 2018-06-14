@@ -8,6 +8,7 @@ import SiteTitle from './components/SiteTitle';
 import ArticlesList from './components/ArticlesList';
 import Footer from './components/Footer';
 import Article from './components/Article';
+import * as api from './api.js';
 
 class App extends Component {
   state = {
@@ -15,7 +16,7 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    this.fetchArticles().then(({ data: { articles } }) => {
+    api.fetchArticles().then(articles => {
       this.setState({ articleData: articles });
     });
   };
@@ -60,11 +61,6 @@ class App extends Component {
       </div>
     );
   }
-  fetchArticles = () => {
-    return axios
-      .get('https://ben-nc-news.herokuapp.com/API/articles')
-      .catch(err => err);
-  };
 }
 
 export default App;

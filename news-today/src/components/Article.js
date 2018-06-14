@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import * as api from '../api';
 
 class Article extends Component {
   state = {
@@ -17,18 +18,20 @@ class Article extends Component {
         params: { article_id }
       }
     } = this.props;
-    this.fetchArticle(article_id).then(
-      ({
-        belongs_to,
-        body,
-        comments,
-        title,
-        created_by: { username },
-        votes
-      }) => {
-        this.setState({ belongs_to, body, comments, title, username, votes });
-      }
-    );
+    api
+      .fetchArticle(article_id)
+      .then(
+        ({
+          belongs_to,
+          body,
+          comments,
+          title,
+          created_by: { username },
+          votes
+        }) => {
+          this.setState({ belongs_to, body, comments, title, username, votes });
+        }
+      );
   };
 
   render() {
@@ -44,13 +47,6 @@ class Article extends Component {
       </section>
     );
   }
-
-  fetchArticle = async article_id => {
-    const { data } = await axios.get(
-      `https://ben-nc-news.herokuapp.com/API/articles/${article_id}`
-    );
-    return data;
-  };
 }
 
 export default Article;
