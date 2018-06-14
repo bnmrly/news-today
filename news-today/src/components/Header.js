@@ -6,7 +6,9 @@ class SiteTitle extends Component {
   render() {
     return (
       <div className="header-title">
-        <NavLink to="/">News Today</NavLink>
+        <NavLink className="header-title-link" to="/">
+          News Today
+        </NavLink>
       </div>
     );
   }
