@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import axios from 'axios';
 import './App.css';
 import './components/Articles.css';
 import Nav from './components/Nav';
@@ -31,7 +30,7 @@ class App extends Component {
           <Nav />
         </nav>
         <main className="main-container">
-          <article className="article-container">
+          <section className="article-container">
             <Switch>
               <Route
                 exact
@@ -53,7 +52,7 @@ class App extends Component {
                 )}
               />
             </Switch>
-          </article>
+          </section>
         </main>
         <footer className="footer">
           <Footer />
