@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../api';
 import './Comments.css';
+import moment from 'moment';
 
 class Comments extends Component {
   state = {
@@ -15,7 +16,8 @@ class Comments extends Component {
 
   render() {
     const { comments } = this.state;
-    console.log(comments, '*******');
+    console.log(comments[0], '*******');
+    // console.log(comments[0]created_at, '******');
 
     return (
       <section className="comments-list">
@@ -25,7 +27,11 @@ class Comments extends Component {
             <section className="comment-section" key={comment._id}>
               <p>{comment.body}</p>
               <p>Votes: {comment.votes}</p>
-              <p>Created at: {comment.created_at}</p>
+              {/* <p>Created at: {comment.created_at}</p> */}
+              <p>
+                Created at:{' '}
+                {moment(comment.created_at).format('DD MMM YYYY hh:mm a')}
+              </p>
               <p>Posted by: {comment.created_by.username}</p>
             </section>
           );
