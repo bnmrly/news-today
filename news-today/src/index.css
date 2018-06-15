@@ -344,13 +344,14 @@ template {
 
 /* My styles */
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat'); */
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',
     Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-weight: 300;
+  /* font-family: 'Courier New', Courier, Monaco; */
 }
 
 ul {
