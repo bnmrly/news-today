@@ -14,7 +14,7 @@
 
 .nav-link {
   display: block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -24,13 +24,15 @@
   /* background-color: #111; */
   /* background-color: rgb(83, 80, 80); */
   /* background-color: rgb(128, 155, 158); */
-  background-color: rgb(188, 39, 39);
+  /* background-color: rgb(188, 39, 39); */
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .nav-link:hover:not(.active) {
-  background-color: rgb(182, 171, 171);
+  /* background-color: rgb(182, 171, 171); */
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .nav-link-active {
-  background-color: #6d746d;
+  background-color: rgba(0, 0, 0, 0.2);
 }

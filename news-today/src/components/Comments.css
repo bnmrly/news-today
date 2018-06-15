@@ -1,7 +1,8 @@
-.comments-container {
-  background-color: rgb(160, 218, 173);
-}
+/* .comments-container {
+  background-color: rgba(0, 0, 0, 0.5);
+} */
 
 .comment-section {
-  background-color: rgb(153, 161, 161);
+  /* background-color: rgb(153, 161, 161); */
+  background-color: rgba(0, 0, 0, 0.1);
 }
