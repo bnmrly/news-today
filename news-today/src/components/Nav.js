@@ -7,7 +7,7 @@ class Nav extends Component {
     return (
       <ul className="nav-list">
         <li className="nav-list__item">
-          <NavLink className="nav-link nav-link-active" to="/topics/coding">
+          <NavLink className="nav-link" to="/topics/coding">
             Coding
           </NavLink>
         </li>
