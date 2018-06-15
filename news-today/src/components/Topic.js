@@ -31,7 +31,7 @@ class Topic extends React.Component {
     const topic = this.props.match.params.topic;
     return (
       <div>
-        <h2>Correct topic goes here: {topic}</h2>
+        <h2>{topic} Articles:</h2>
         <ArticlesList articleData={this.state.articleData} />
       </div>
     );
