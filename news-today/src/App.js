@@ -31,7 +31,6 @@ class App extends Component {
           <Nav />
         </nav>
         <main className="main-container">
-          {/* <section className="article-container"> */}
           <Switch>
             <Route
               exact
@@ -52,14 +51,12 @@ class App extends Component {
                 <ArticlesList articleData={this.state.articleData} />
               )}
             />
-            {/* <Route exact path="/topics/:topic" render={() => <Topic />} /> */}
             <Route
               exact
               path="/topics/:topic"
               render={props => <Topic {...props} />}
             />
           </Switch>
-          {/* </section> */}
         </main>
         <footer className="footer">
           <Footer />

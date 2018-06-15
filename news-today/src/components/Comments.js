@@ -27,7 +27,6 @@ class Comments extends Component {
             <section className="comment-section" key={comment._id}>
               <p>{comment.body}</p>
               <p>Votes: {comment.votes}</p>
-              {/* <p>Created at: {comment.created_at}</p> */}
               <p>
                 Created at:{' '}
                 {moment(comment.created_at).format('DD MMM YYYY hh:mm a')}
