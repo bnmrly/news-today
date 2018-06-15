@@ -16,7 +16,7 @@ class Comments extends Component {
 
   render() {
     const { comments } = this.state;
-    console.log(comments[0], '*******');
+    // console.log(comments[0], '*******');
     // console.log(comments[0]created_at, '******');
 
     return (

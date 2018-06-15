@@ -7,7 +7,9 @@ const ArticlesList = ({ articleData }) => {
       {articleData.map(article => {
         return (
           <li key={article._id}>
-            <Link to={`/articles/${article._id}`}>{article.title}</Link>
+            <Link className="link" to={`/articles/${article._id}`}>
+              {article.title}
+            </Link>
           </li>
         );
       })}
