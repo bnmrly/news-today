@@ -50,11 +50,13 @@ class Article extends Component {
           <p>Topic: {belongs_to}</p>
           <p>Comment count: {comments}</p>
           <p>Votes: {votes}</p>
+          <button onClick={() => this.handleVoteClick('up')}>Vote Up</button>
+          <button onClick={() => this.handleVoteClick('down')}>
+            Vote Down
+          </button>
           <p>Username: {username}</p>
         </section>
         <section className="comments-container">
-          {/* <Comments articleId={article_id} /> */}
-
           {this.state.comments && <Comments articleId={article_id} />}
           {this.state.comments === 0 && (
             <h2>
@@ -65,6 +67,16 @@ class Article extends Component {
       </div>
     );
   }
+
+  // optimistic rendering here, could use then block instead
+  handleVoteClick = amount => {
+    const { votes } = this.state;
+    const article_id = this.props.match.params.article_id;
+    api.voteOnArticle(article_id, amount);
+    this.setState({
+      votes: amount === 'up' ? votes + 1 : votes - 1
+    });
+  };
 }
 
 export default Article;

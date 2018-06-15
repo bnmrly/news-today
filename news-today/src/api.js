@@ -20,3 +20,10 @@ export const fetchArticlesByTopic = async topic => {
   const { data } = await axios.get(`${url}/topics/${topic}/articles`);
   return data;
 };
+
+export const voteOnArticle = async (article_id, amount) => {
+  const { data } = await axios.put(
+    `${url}/articles/${article_id}?vote=${amount}`
+  );
+  return data;
+};
