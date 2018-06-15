@@ -6,17 +6,6 @@
   background-size: 1rem 1rem;
 }
 
-.header-title-link {
-  /* text-transform: uppercase; */
-  font-size: 2rem;
-  color: white;
-  background-color: red;
-}
-
-/* .header-title-link:hover {
-  font-style: italic;
-} */
-
 .site-logo {
   object-fit: contain;
   max-height: 10vh;
