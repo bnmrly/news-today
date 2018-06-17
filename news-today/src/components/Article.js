@@ -14,11 +14,7 @@ class Article extends Component {
   };
 
   componentDidMount = () => {
-    const {
-      match: {
-        params: { article_id }
-      }
-    } = this.props;
+    const article_id = this.props.match.params.article_id;
     api
       .fetchArticle(article_id)
       .then(
@@ -36,11 +32,7 @@ class Article extends Component {
   };
 
   render() {
-    const {
-      match: {
-        params: { article_id }
-      }
-    } = this.props;
+    const article_id = this.props.match.params.article_id;
     const { belongs_to, body, comments, title, username, votes } = this.state;
     return (
       <div className="article-page-container">
