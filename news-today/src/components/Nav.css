@@ -14,7 +14,10 @@
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding-left: 1.5rem;
+  padding-right: 1.25rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
   text-decoration: none;
 }
 
@@ -32,6 +35,12 @@
 }
 
 .nav-link-active {
-  /* background-color: rgba(0, 0, 0, 0.2); */
-  font-style: italic;
+  background-color: rgba(0, 0, 0, 0.2);
 }
+
+/* fix padding-right */
+
+/* .last-child {
+  padding-right: 0rem;
+  margin-right: 0rem;
+} */
