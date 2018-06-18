@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://ben-nc-news.herokuapp.com/API/';
+const url = 'https://ben-nc-news.herokuapp.com/API';
 
 export const fetchArticles = () => {
   return axios.get(`${url}/articles`).then(res => res.data.articles);
@@ -25,5 +25,13 @@ export const voteOnArticle = async (article_id, amount) => {
   const { data } = await axios.put(
     `${url}/articles/${article_id}?vote=${amount}`
   );
+  return data;
+};
+
+export const postComment = async (article_id, comment) => {
+  console.log('posting');
+  const { data } = await axios.post(`${url}articles/${article_id}/comments`, {
+    comment
+  });
   return data;
 };
