@@ -31,12 +31,9 @@ class Topic extends React.Component {
     }
   }
 
-  // check on an else condition for ternary
+  // else condition for ternary ?
   render() {
     const topic = this.props.match.params.topic;
-    if (topic === 'football') {
-      console.log("it's football");
-    } else console.log("it's another topic");
     return (
       <div>
         {topic === 'coding' ? (
