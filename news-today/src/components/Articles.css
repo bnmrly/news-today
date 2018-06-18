@@ -1,5 +1,6 @@
 .articles-all {
-  line-height: 2rem;
+  margin: 2rem 8rem 1rem 8rem;
+  line-height: 2.5rem;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
