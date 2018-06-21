@@ -38,9 +38,6 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* fix padding-right */
-
-/* .last-child {
-  padding-right: 0rem;
-  margin-right: 0rem;
-} */
+.nav-link__last-child .nav-link__last-child {
+  padding-right: 1rem;
+}

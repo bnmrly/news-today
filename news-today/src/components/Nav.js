@@ -17,7 +17,10 @@ class Nav extends Component {
           </NavLink>
         </li>
         <li className="nav-list__item last-child">
-          <NavLink className="nav-link" to="/topics/football">
+          <NavLink
+            className="nav-link nav-link__last-child"
+            to="/topics/football"
+          >
             Football{' '}
           </NavLink>
         </li>
