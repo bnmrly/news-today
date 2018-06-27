@@ -27,32 +27,26 @@ class App extends Component {
         <Header />
         <Nav />
         <main className="main-container">
-          <Switch>
-            <Route
-              exact
-              path="/articles/:article_id"
-              render={props => <Article {...props} />}
-            />
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <ArticlesList articleData={this.state.articleData} />
-              )}
-            />
-            <Route
-              exact
-              path="/articles"
-              render={() => (
-                <ArticlesList articleData={this.state.articleData} />
-              )}
-            />
-            <Route
-              exact
-              path="/topics/:topic"
-              render={props => <Topic {...props} />}
-            />
-          </Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <ArticlesList articleData={this.state.articleData} />}
+          />
+          <Route
+            exact
+            path="/articles"
+            render={() => <ArticlesList articleData={this.state.articleData} />}
+          />
+          <Route
+            exact
+            path="/articles/:article_id"
+            render={props => <Article {...props} />}
+          />
+          <Route
+            exact
+            path="/topics/:topic"
+            render={props => <Topic {...props} />}
+          />
         </main>
         <Footer />
       </div>
