@@ -31,30 +31,20 @@ class Topic extends React.Component {
     }
   }
 
-  // else condition for ternary ?
   render() {
     const topic = this.props.match.params.topic;
+    const images = {
+      cooking: cookingArticlesImage,
+      coding: codingArticlesImage,
+      football: footballArticlesImage
+    };
     return (
       <div>
-        {topic === 'coding' ? (
-          <img
-            className="topic-image"
-            src={codingArticlesImage}
-            alt="coding Articles heading"
-          />
-        ) : topic === 'cooking' ? (
-          <img
-            className="topic-image"
-            src={cookingArticlesImage}
-            alt="cooking Articles heading"
-          />
-        ) : (
-          <img
-            className="topic-image"
-            src={footballArticlesImage}
-            alt="football Articles heading"
-          />
-        )}
+        <img
+          className="topic-image"
+          src={images[topic]}
+          alt={`${topic} Articles heading`}
+        />
         <ArticlesList articleData={this.state.articleData} />
       </div>
     );
