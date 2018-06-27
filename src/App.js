@@ -54,9 +54,7 @@ class App extends Component {
             />
           </Switch>
         </main>
-        <footer className="footer">
-          <Footer />
-        </footer>
+        <Footer />
       </div>
     );
   }
