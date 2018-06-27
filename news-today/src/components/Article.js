@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as api from '../api';
-import url from '../api';
 import Comments from './Comments';
 import { Link } from 'react-router-dom';
 import './Article.css';
@@ -61,7 +60,7 @@ class Article extends Component {
               <img
                 className="vote-up-image"
                 src={voteUp}
-                alt="vote up image"
+                alt="vote up"
                 onClick={() => this.handleVoteClick('up')}
               />
               <p>Vote up</p>
@@ -70,7 +69,7 @@ class Article extends Component {
               <img
                 className="vote-down-image"
                 src={voteDown}
-                alt="vote down image"
+                alt="vote down"
                 onClick={() => this.handleVoteClick('down')}
               />
               <p>Vote down</p>
