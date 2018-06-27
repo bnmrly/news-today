@@ -3,16 +3,16 @@ import { NavLink } from 'react-router-dom';
 import './Header.css';
 import logo from '../images/logo.png';
 
-class SiteTitle extends Component {
+class Header extends Component {
   render() {
     return (
-      <div className="header-title">
+      <header className="header">
         <NavLink className="header-title-link" to="/">
           <img className="site-logo" src={logo} alt="site logo" />
         </NavLink>
-      </div>
+      </header>
     );
   }
 }
 
-export default SiteTitle;
+export default Header;

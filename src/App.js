@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import './components/Articles.css';
 import Nav from './components/Nav';
-import SiteTitle from './components/Header';
+import Header from './components/Header';
 import ArticlesList from './components/ArticlesList';
 import Footer from './components/Footer';
 import Article from './components/Article';
@@ -24,9 +24,7 @@ class App extends Component {
   render() {
     return (
       <div className="App-container">
-        <header className="header">
-          <SiteTitle />
-        </header>
+        <Header />
         <nav className="nav">
           <Nav />
         </nav>
