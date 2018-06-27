@@ -1,0 +1,12 @@
+.footer {
+  margin-top: 1rem;
+  background: radial-gradient(circle, white 10%, transparent 10%),
+    radial-gradient(circle, pink 10%, white 10%) 20px 20px;
+  background-size: 1rem 1rem;
+  text-align: right;
+}
+
+.footer-text {
+  margin-top: -1rem;
+  margin-right: 1rem;
+}

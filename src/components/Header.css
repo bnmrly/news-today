@@ -1,0 +1,10 @@
+.header {
+  background: radial-gradient(circle, white 10%, transparent 10%),
+    radial-gradient(circle, pink 10%, white 10%) 20px 20px;
+  background-size: 1rem 1rem;
+}
+
+.site-logo {
+  object-fit: contain;
+  max-height: 10vh;
+}
