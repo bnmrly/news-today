@@ -47,6 +47,7 @@ class Comments extends Component {
               <p>{comment.body}</p>
               <p>Votes: {comment.votes}</p>
               <p>Created {moment(comment.created_at).fromNow()}</p>
+              <p>Created by {comment.created_by.username}</p>
             </section>
           );
         })}
@@ -56,7 +57,6 @@ class Comments extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state, '**********');
     const { commentInput, comments } = this.state;
     api.postComment(this.props.articleId, commentInput).then(comment => {
       this.setState({
