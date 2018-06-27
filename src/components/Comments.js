@@ -34,6 +34,7 @@ class Comments extends Component {
               className="comment-input"
               placeholder="Post your comment"
               required="true"
+              value={this.state.commentInput}
               onChange={this.handleInput}
             />
             <button type="submit">Submit</button>
@@ -55,15 +56,28 @@ class Comments extends Component {
       </section>
     );
   }
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   console.log(this.state, 'asddsadsa');
+  //   const { commentInput, comments } = this.state;
+  //   api.postComment(this.props.articleId, commentInput);
+  //   this.setState({
+  //     comments: [
+  //       ...comments,
+  //       { body: commentInput, created_at: moment().format(), votes: 0 }
+  //     ]
+  //   });
+  // };
+
   handleSubmit = e => {
     e.preventDefault();
+    console.log(this.state, '**********');
     const { commentInput, comments } = this.state;
-    api.postComment(this.props.articleId, commentInput);
-    this.setState({
-      comments: [
-        ...comments,
-        { body: commentInput, created_at: moment().format(), votes: 0 }
-      ]
+    api.postComment(this.props.articleId, commentInput).then(comment => {
+      this.setState({
+        comments: [comment, ...comments],
+        commentInput: ''
+      });
     });
   };
 
