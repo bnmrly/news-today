@@ -46,28 +46,13 @@ class Comments extends Component {
             <section className="comment-section" key={comment._id}>
               <p>{comment.body}</p>
               <p>Votes: {comment.votes}</p>
-              <p>
-                Created at:{' '}
-                {moment(comment.created_at).format('DD MMM YYYY hh:mm a')}
-              </p>
+              <p>Created {moment(comment.created_at).fromNow()}</p>
             </section>
           );
         })}
       </section>
     );
   }
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   console.log(this.state, 'asddsadsa');
-  //   const { commentInput, comments } = this.state;
-  //   api.postComment(this.props.articleId, commentInput);
-  //   this.setState({
-  //     comments: [
-  //       ...comments,
-  //       { body: commentInput, created_at: moment().format(), votes: 0 }
-  //     ]
-  //   });
-  // };
 
   handleSubmit = e => {
     e.preventDefault();
