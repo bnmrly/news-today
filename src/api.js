@@ -29,7 +29,6 @@ export const voteOnArticle = async (article_id, amount) => {
 };
 
 export const postComment = async (article_id, comment) => {
-  console.log('posting');
   const { data } = await axios.post(`${url}articles/${article_id}/comments`, {
     comment
   });

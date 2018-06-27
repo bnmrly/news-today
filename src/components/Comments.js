@@ -58,8 +58,6 @@ class Comments extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { commentInput, comments } = this.state;
-    // console.log(this.state);
-    // console.log(comments);
     api.postComment(this.props.articleId, commentInput);
     this.setState({
       comments: [
@@ -72,7 +70,6 @@ class Comments extends Component {
   handleInput = e => {
     e.preventDefault();
     const value = e.target.value;
-    console.log(value);
     this.setState({
       commentInput: value
     });
