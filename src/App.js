@@ -30,7 +30,8 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <ArticlesList articleData={this.state.articleData} />}
+            component={ArticlesList}
+            // render={() => <ArticlesList articleData={this.state.articleData} />}
           />
           <Route
             exact
