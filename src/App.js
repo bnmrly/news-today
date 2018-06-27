@@ -25,9 +25,7 @@ class App extends Component {
     return (
       <div className="App-container">
         <Header />
-        <nav className="nav">
-          <Nav />
-        </nav>
+        <Nav />
         <main className="main-container">
           <Switch>
             <Route
