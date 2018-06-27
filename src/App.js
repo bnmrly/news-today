@@ -8,36 +8,16 @@ import ArticlesList from './components/ArticlesList';
 import Footer from './components/Footer';
 import Article from './components/Article';
 import Topic from './components/Topic';
-import * as api from './api.js';
 
 class App extends Component {
-  state = {
-    articleData: []
-  };
-
-  componentDidMount = () => {
-    api.fetchArticles().then(articles => {
-      this.setState({ articleData: articles });
-    });
-  };
-
   render() {
     return (
       <div className="App-container">
         <Header />
         <Nav />
         <main className="main-container">
-          <Route
-            exact
-            path="/"
-            component={ArticlesList}
-            // render={() => <ArticlesList articleData={this.state.articleData} />}
-          />
-          <Route
-            exact
-            path="/articles"
-            render={() => <ArticlesList articleData={this.state.articleData} />}
-          />
+          <Route exact path="/" component={ArticlesList} />
+          <Route exact path="/articles" component={ArticlesList} />
           <Route
             exact
             path="/articles/:article_id"
