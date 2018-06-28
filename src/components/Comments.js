@@ -13,21 +13,24 @@ class Comments extends Component {
 
   componentDidMount = () => {
     api.fetchComments(this.props.articleId).then(data => {
-      this.setState({ comments: data.comments });
+      this.setState({
+        comments: data.comments.sort((a, b) => b.created_at - a.created_at)
+      });
     });
   };
 
   componentDidUpdate(prevProps) {
     if (this.props.articleId !== prevProps.articleId) {
       api.fetchComments(this.props.articleId).then(data => {
-        this.setState({ comments: data.comments });
+        this.setState({
+          comments: data.comments.sort((a, b) => b.created_at - a.created_at)
+        });
       });
     }
   }
 
   render() {
     const { comments } = this.state;
-    console.log(comments, 'daasdasdas');
     return (
       <div className="comments-container">
         <section className="post-comment">
