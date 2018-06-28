@@ -31,7 +31,7 @@ class Comments extends Component {
     return (
       <div className="comments-container">
         <section className="post-comment">
-          <h3 className="h3 comment-post">Post a comment!</h3>
+          <h3 className="h3 comment-post">Post a comment</h3>
           <form className="form" onSubmit={this.handleSubmit}>
             <input
               className="comment-input"
@@ -46,18 +46,28 @@ class Comments extends Component {
           </form>
         </section>
         <div className="all-comments">
-          <h3 className="h3 user-comments">User Comments:</h3>
+          <h3 className="h3 user-comments">Comments</h3>
           {comments.map(comment => {
             return (
               <div className="comments-item" key={comment._id}>
                 <section className="comment-individual">
-                  <p>{comment.body}</p>
+                  <p className="comment-body">{comment.body}</p>
                 </section>
                 <section className="comment-info">
-                  <p>Posted by {comment.created_by.username}</p>
-                  <p>Created {moment(comment.created_at).fromNow()}</p>
-                  <p>Delete comment here</p>
-                  <p>Votes: {comment.votes}</p>
+                  <ul className="comment-info__list">
+                    <li className="comment-info__list--item">
+                      Posted by {comment.created_by.username}
+                    </li>
+                    <li className="comment-info__list--item">
+                      Created {moment(comment.created_at).fromNow()}
+                    </li>
+                    <li className="comment-info__list--item">
+                      Delete comment here
+                    </li>
+                    <li className="comment-info__list--item">
+                      Votes: {comment.votes}
+                    </li>
+                  </ul>
                   <div className="vote-up-container">
                     <img
                       className="vote-up-image pointer"
@@ -68,7 +78,7 @@ class Comments extends Component {
                       }
                     />
                     <p
-                      className="pointer vote-link"
+                      className="pointer vote-link link"
                       onClick={() =>
                         this.handleVoteCommentClick(comment._id, 'up')
                       }
@@ -86,7 +96,7 @@ class Comments extends Component {
                       }
                     />
                     <p
-                      className="vote-link pointer"
+                      className="pointer vote-link link"
                       onClick={() =>
                         this.handleVoteCommentClick(comment._id, 'down')
                       }
