@@ -1,6 +1,4 @@
 import React from 'react';
-import * as api from '../api';
-
 import './Topic.css';
 import codingArticlesImage from '../images/coding-articles.png';
 import cookingArticlesImage from '../images/cooking-articles.png';
