@@ -52,9 +52,9 @@ class Article extends Component {
           </section>
           <section className="article-info">
             <ul className="article-info__list">
-              <li>Posted by {username}</li>
-              <li>Comments: {comments}</li>
-              <li>Votes: {votes}</li>
+              <li className="article-info__list--item">Posted by {username}</li>
+              <li className="article-info__list--item">Comments: {comments}</li>
+              <li className="article-info__list--item">Votes: {votes}</li>
             </ul>
             <div className="vote-up-container">
               <img
@@ -64,7 +64,7 @@ class Article extends Component {
                 onClick={() => this.handleVoteArticleClick('up')}
               />
               <p
-                className="pointer vote-link"
+                className="pointer vote-link link"
                 onClick={() => this.handleVoteArticleClick('up')}
               >
                 Vote &uarr;
@@ -78,7 +78,7 @@ class Article extends Component {
                 onClick={() => this.handleVoteArticleClick('down')}
               />
               <p
-                className="vote-link pointer"
+                className="pointer vote-link link"
                 onClick={() => this.handleVoteArticleClick('down')}
               >
                 Vote &darr;
