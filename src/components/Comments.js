@@ -48,9 +48,11 @@ class Comments extends Component {
           return (
             <section className="comment-section" key={comment._id}>
               <p>{comment.body}</p>
-              <p>Votes: {comment.votes}</p>
-              <p>Created {moment(comment.created_at).fromNow()}</p>
               <p>Created by {comment.created_by.username}</p>
+              <p>Created {moment(comment.created_at).fromNow()}</p>
+              <p>Delete comment here</p>
+              <p>Votes: {comment.votes}</p>
+
               <div className="vote-up-container">
                 <img
                   className="vote-up-image pointer"
