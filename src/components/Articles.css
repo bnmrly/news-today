@@ -17,3 +17,7 @@
 .article-meta__item {
   font-size: 0.8rem;
 }
+
+.article-info__list--item {
+  margin-bottom: 0.2rem;
+}
