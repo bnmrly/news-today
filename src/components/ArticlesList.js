@@ -8,9 +8,24 @@ class ArticlesList extends Component {
   };
 
   componentDidMount = () => {
-    api.fetchArticles().then(articles => {
-      this.setState({ articleData: articles });
+    const topic = this.props.match.params.topic;
+    const fetch = topic ? api.fetchArticlesByTopic : api.fetchArticles;
+    fetch(topic).then(data => {
+      this.setState({
+        articleData: data
+      });
     });
+  };
+
+  componentDidUpdate = prevProps => {
+    const topic = this.props.match.params.topic;
+    if (this.props.match.params.topic !== prevProps.match.params.topic) {
+      api.fetchArticlesByTopic(topic).then(data => {
+        this.setState({
+          articleData: data
+        });
+      });
+    }
   };
 
   render() {

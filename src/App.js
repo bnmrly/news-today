@@ -26,7 +26,12 @@ class App extends Component {
           <Route
             exact
             path="/topics/:topic"
-            render={props => <Topic {...props} />}
+            render={props => (
+              <React.Fragment>
+                <Topic {...props} />
+                <ArticlesList {...props} />
+              </React.Fragment>
+            )}
           />
         </main>
         <Footer />
