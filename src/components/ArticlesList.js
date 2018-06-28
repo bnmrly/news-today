@@ -19,17 +19,26 @@ class ArticlesList extends Component {
       return <p>Loading...</p>;
     } else {
       return (
-        <ul className="articles-all">
+        <article className="articles-all">
           {articleData.map(article => {
             return (
-              <li key={article._id}>
+              <section className="article-title" key={article._id}>
                 <Link className="link" to={`/articles/${article._id}`}>
                   {article.title}
                 </Link>
-              </li>
+                <ul className="article-meta">
+                  <li className="article-meta__item">
+                    Comments: {article.comments}
+                  </li>
+                  <li className="article-meta__item">Votes: {article.votes}</li>
+                  <li className="article-meta__item">
+                    Created by: {article.created_by.username}
+                  </li>
+                </ul>
+              </section>
             );
           })}
-        </ul>
+        </article>
       );
     }
   }
