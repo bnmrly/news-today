@@ -10,9 +10,9 @@ class ArticlesList extends Component {
   componentDidMount = () => {
     const topic = this.props.match.params.topic;
     const fetch = topic ? api.fetchArticlesByTopic : api.fetchArticles;
-    fetch(topic).then(data => {
+    fetch(topic).then(articles => {
       this.setState({
-        articleData: data
+        articleData: articles
       });
     });
   };

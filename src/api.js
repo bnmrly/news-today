@@ -18,7 +18,7 @@ export const fetchComments = async article_id => {
 
 export const fetchArticlesByTopic = async topic => {
   const { data } = await axios.get(`${url}/topics/${topic}/articles`);
-  return data;
+  return data.articles;
 };
 
 export const voteOnArticle = async (article_id, amount) => {
