@@ -4,12 +4,16 @@
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.votes-container {
-  display: flex;
-  max-height: 5vh;
+.article-title__link {
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
-.vote-up-image,
-.vote-down-image {
-  height: 2.5rem;
+.article-meta {
+  display: flex;
+  margin-top: -0.8rem;
+}
+
+.article-meta__item {
+  font-size: 0.8rem;
 }

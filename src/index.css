@@ -342,6 +342,12 @@ template {
   display: none;
 }
 
+/* End of normalize.css */
+
+/* ========================================================================== */
+/* ========================================================================== */
+/* ========================================================================== */
+
 /* My styles */
 
 body {
@@ -365,6 +371,22 @@ a {
   color: black;
 }
 
+.link:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.vote-link:hover {
+  font-weight: bold;
+}
+
 .h3 {
   margin-top: 0;
+}
+
+.title_case {
+  text-transform: capitalize;
+}
+
+.left {
+  margin-left: 0.5rem;
 }

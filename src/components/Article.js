@@ -41,7 +41,7 @@ class Article extends Component {
       <div className="article-page-container">
         <div className="article-section">
           <section className="article-individual">
-            <h3 className="h3">{title}</h3>
+            <h3 className="h3 title_case">{title.toLowerCase()}</h3>
             <p>{body}</p>
             <p>
               See more {belongs_to} articles
@@ -58,21 +58,31 @@ class Article extends Component {
             </ul>
             <div className="vote-up-container">
               <img
-                className="vote-up-image"
+                className="vote-up-image pointer"
                 src={voteUp}
                 alt="vote up"
                 onClick={() => this.handleVoteClick('up')}
               />
-              <p>Vote up</p>
+              <p
+                className="link pointer vote-link"
+                onClick={() => this.handleVoteClick('up')}
+              >
+                Vote &uarr;
+              </p>
             </div>
             <div className="vote-down-container">
               <img
-                className="vote-down-image"
+                className="vote-down-image pointer"
                 src={voteDown}
                 alt="vote down"
                 onClick={() => this.handleVoteClick('down')}
               />
-              <p>Vote down</p>
+              <p
+                className="link vote-link pointer"
+                onClick={() => this.handleVoteClick('down')}
+              >
+                Vote &darr;
+              </p>
             </div>
           </section>
         </div>

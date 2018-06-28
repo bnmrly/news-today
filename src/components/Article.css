@@ -23,12 +23,22 @@
   align-items: flex-end;
 }
 
+.span-link__topics {
+  font-weight: bold;
+}
+
 .vote-up-container,
 .vote-down-container {
   display: flex;
   margin-top: 0.5rem;
 }
 
-.span-link__topics {
-  font-weight: bold;
+.vote-up-image,
+.vote-down-image {
+  height: 2.5rem;
+  margin-right: 1rem;
+}
+
+.pointer {
+  cursor: pointer;
 }

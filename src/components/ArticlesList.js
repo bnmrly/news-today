@@ -23,15 +23,20 @@ class ArticlesList extends Component {
           {articleData.map(article => {
             return (
               <section className="article-title" key={article._id}>
-                <Link className="link" to={`/articles/${article._id}`}>
-                  {article.title}
+                <Link
+                  className="link article-title__link title_case"
+                  to={`/articles/${article._id}`}
+                >
+                  {article.title.toLowerCase()}
                 </Link>
                 <ul className="article-meta">
                   <li className="article-meta__item">
-                    Comments: {article.comments}
+                    {article.comments} comments
                   </li>
-                  <li className="article-meta__item">Votes: {article.votes}</li>
-                  <li className="article-meta__item">
+                  <li className="article-meta__item left">
+                    {article.votes} votes
+                  </li>
+                  <li className="article-meta__item left">
                     Created by: {article.created_by.username}
                   </li>
                 </ul>
