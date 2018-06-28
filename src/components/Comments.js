@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import * as api from '../api';
 import './Comments.css';
 import moment from 'moment';
+import voteUp from '../images/vote-up.png';
+import voteDown from '../images/vote-down.png';
 
 class Comments extends Component {
   state = {
@@ -25,6 +27,7 @@ class Comments extends Component {
 
   render() {
     const { comments } = this.state;
+    console.log(comments, 'daasdasdas');
     return (
       <section className="comments-container">
         <section className="post-comment">
@@ -48,6 +51,38 @@ class Comments extends Component {
               <p>Votes: {comment.votes}</p>
               <p>Created {moment(comment.created_at).fromNow()}</p>
               <p>Created by {comment.created_by.username}</p>
+              <div className="vote-up-container">
+                <img
+                  className="vote-up-image pointer"
+                  src={voteUp}
+                  alt="vote up"
+                  onClick={() => this.handleVoteCommentClick(comment._id, 'up')}
+                />
+                <p
+                  className="pointer vote-link"
+                  onClick={() => this.handleVoteCommentClick(comment._id, 'up')}
+                >
+                  Vote &uarr;
+                </p>
+              </div>
+              <div className="vote-down-container">
+                <img
+                  className="vote-down-image pointer"
+                  src={voteDown}
+                  alt="vote down"
+                  onClick={() =>
+                    this.handleVoteCommentClick(comment._id, 'down')
+                  }
+                />
+                <p
+                  className="vote-link pointer"
+                  onClick={() =>
+                    this.handleVoteCommentClick(comment._id, 'down')
+                  }
+                >
+                  Vote &darr;
+                </p>
+              </div>
             </section>
           );
         })}
@@ -71,6 +106,22 @@ class Comments extends Component {
     const value = e.target.value;
     this.setState({
       commentInput: value
+    });
+  };
+
+  handleVoteCommentClick = (comment_id, amount) => {
+    const { comments } = this.state;
+    const newComments = [...comments];
+    api.voteOnComment(comment_id, amount);
+    const index = newComments.findIndex(comment => {
+      return comment._id === comment_id;
+    });
+    newComments[index].votes =
+      amount === 'up'
+        ? newComments[index].votes + 1
+        : newComments[index].votes - 1;
+    this.setState({
+      comments: newComments
     });
   };
 }

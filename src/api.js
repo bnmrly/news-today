@@ -34,3 +34,10 @@ export const postComment = async (article_id, comment) => {
   });
   return data;
 };
+
+export const voteOnComment = async (comment_id, amount) => {
+  const { data } = await axios.put(
+    `${url}/comments/${comment_id}?vote=${amount}`
+  );
+  return data;
+};

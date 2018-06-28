@@ -61,11 +61,11 @@ class Article extends Component {
                 className="vote-up-image pointer"
                 src={voteUp}
                 alt="vote up"
-                onClick={() => this.handleVoteClick('up')}
+                onClick={() => this.handleVoteArticleClick('up')}
               />
               <p
                 className="pointer vote-link"
-                onClick={() => this.handleVoteClick('up')}
+                onClick={() => this.handleVoteArticleClick('up')}
               >
                 Vote &uarr;
               </p>
@@ -75,11 +75,11 @@ class Article extends Component {
                 className="vote-down-image pointer"
                 src={voteDown}
                 alt="vote down"
-                onClick={() => this.handleVoteClick('down')}
+                onClick={() => this.handleVoteArticleClick('down')}
               />
               <p
                 className="vote-link pointer"
-                onClick={() => this.handleVoteClick('down')}
+                onClick={() => this.handleVoteArticleClick('down')}
               >
                 Vote &darr;
               </p>
@@ -99,7 +99,7 @@ class Article extends Component {
     );
   }
 
-  handleVoteClick = amount => {
+  handleVoteArticleClick = amount => {
     const { votes } = this.state;
     const article_id = this.props.match.params.article_id;
     api.voteOnArticle(article_id, amount);
