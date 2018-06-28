@@ -1,11 +1,44 @@
-.comment-section {
-  background-color: rgba(0, 0, 0, 0.1);
+.post-comment {
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 .comment-input {
-  /* width: 30rem;
-  height: 5rem;
-  font-size: 1rem; */
-  /* margin-right: 1rem; */
+  width: 25rem;
+  font-size: 1rem;
+  margin-right: 3rem;
   background-color: rgb(229, 226, 226);
+}
+
+/* .comment-individual,
+.comment-info {
+  background-color: rgba(0, 0, 0, 0.1);
+} */
+
+.comments-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  margin-bottom: 2rem;
+}
+
+.comment-individual {
+  width: 70%;
+  margin-top: 0.75rem;
+  margin-left: 1rem;
+}
+
+.comment-info {
+  width: 25%;
+  margin-top: 0.75rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: right;
+  align-items: flex-end;
 }

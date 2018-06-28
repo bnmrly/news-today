@@ -29,7 +29,7 @@ class Comments extends Component {
     const { comments } = this.state;
     console.log(comments, 'daasdasdas');
     return (
-      <section className="comments-container">
+      <div className="comments-container">
         <section className="post-comment">
           <h3>Post a comment!</h3>
           <form onSubmit={this.handleSubmit}>
@@ -43,52 +43,61 @@ class Comments extends Component {
             <button type="submit">Submit</button>
           </form>
         </section>
-        <h3 className="h3 user-comments">User Comments:</h3>
-        {comments.map(comment => {
-          return (
-            <section className="comment-section" key={comment._id}>
-              <p>{comment.body}</p>
-              <p>Created by {comment.created_by.username}</p>
-              <p>Created {moment(comment.created_at).fromNow()}</p>
-              <p>Delete comment here</p>
-              <p>Votes: {comment.votes}</p>
-
-              <div className="vote-up-container">
-                <img
-                  className="vote-up-image pointer"
-                  src={voteUp}
-                  alt="vote up"
-                  onClick={() => this.handleVoteCommentClick(comment._id, 'up')}
-                />
-                <p
-                  className="pointer vote-link"
-                  onClick={() => this.handleVoteCommentClick(comment._id, 'up')}
-                >
-                  Vote &uarr;
-                </p>
+        <div className="all-comments">
+          <h3 className="h3 user-comments">User Comments:</h3>
+          {comments.map(comment => {
+            return (
+              <div className="comments-item" key={comment._id}>
+                <section className="comment-individual">
+                  <p>{comment.body}</p>
+                </section>
+                <section className="comment-info">
+                  <p>Posted by {comment.created_by.username}</p>
+                  <p>Created {moment(comment.created_at).fromNow()}</p>
+                  <p>Delete comment here</p>
+                  <p>Votes: {comment.votes}</p>
+                  <div className="vote-up-container">
+                    <img
+                      className="vote-up-image pointer"
+                      src={voteUp}
+                      alt="vote up"
+                      onClick={() =>
+                        this.handleVoteCommentClick(comment._id, 'up')
+                      }
+                    />
+                    <p
+                      className="pointer vote-link"
+                      onClick={() =>
+                        this.handleVoteCommentClick(comment._id, 'up')
+                      }
+                    >
+                      Vote &uarr;
+                    </p>
+                  </div>
+                  <div className="vote-down-container">
+                    <img
+                      className="vote-down-image pointer"
+                      src={voteDown}
+                      alt="vote down"
+                      onClick={() =>
+                        this.handleVoteCommentClick(comment._id, 'down')
+                      }
+                    />
+                    <p
+                      className="vote-link pointer"
+                      onClick={() =>
+                        this.handleVoteCommentClick(comment._id, 'down')
+                      }
+                    >
+                      Vote &darr;
+                    </p>
+                  </div>
+                </section>
               </div>
-              <div className="vote-down-container">
-                <img
-                  className="vote-down-image pointer"
-                  src={voteDown}
-                  alt="vote down"
-                  onClick={() =>
-                    this.handleVoteCommentClick(comment._id, 'down')
-                  }
-                />
-                <p
-                  className="vote-link pointer"
-                  onClick={() =>
-                    this.handleVoteCommentClick(comment._id, 'down')
-                  }
-                >
-                  Vote &darr;
-                </p>
-              </div>
-            </section>
-          );
-        })}
-      </section>
+            );
+          })}
+        </div>
+      </div>
     );
   }
 

@@ -86,15 +86,14 @@ class Article extends Component {
             </div>
           </section>
         </div>
-
-        <section className="comments-container">
+        <div className="comments-section-container">
           {this.state.comments && <Comments articleId={article_id} />}
           {this.state.comments === 0 && (
             <h2>
               No comments available for this article, please post one now!
             </h2>
           )}
-        </section>
+        </div>
       </div>
     );
   }
