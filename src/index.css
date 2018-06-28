@@ -391,3 +391,8 @@ a {
 .left {
   margin-left: 0.5rem;
 }
+
+.form {
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}

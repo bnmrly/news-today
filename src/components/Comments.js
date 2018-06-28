@@ -31,8 +31,8 @@ class Comments extends Component {
     return (
       <div className="comments-container">
         <section className="post-comment">
-          <h3>Post a comment!</h3>
-          <form onSubmit={this.handleSubmit}>
+          <h3 className="h3 comment-post">Post a comment!</h3>
+          <form className="form" onSubmit={this.handleSubmit}>
             <input
               className="comment-input"
               placeholder="Post your comment"
@@ -40,7 +40,9 @@ class Comments extends Component {
               value={this.state.commentInput}
               onChange={this.handleInput}
             />
-            <button type="submit">Submit</button>
+            <button className="button" type="submit">
+              Submit
+            </button>
           </form>
         </section>
         <div className="all-comments">
