@@ -64,7 +64,7 @@ class Article extends Component {
                 onClick={() => this.handleVoteClick('up')}
               />
               <p
-                className="link pointer vote-link"
+                className="pointer vote-link"
                 onClick={() => this.handleVoteClick('up')}
               >
                 Vote &uarr;
@@ -78,7 +78,7 @@ class Article extends Component {
                 onClick={() => this.handleVoteClick('down')}
               />
               <p
-                className="link vote-link pointer"
+                className="vote-link pointer"
                 onClick={() => this.handleVoteClick('down')}
               >
                 Vote &darr;
