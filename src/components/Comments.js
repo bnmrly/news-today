@@ -12,20 +12,26 @@ class Comments extends Component {
   };
 
   componentDidMount = () => {
-    api.fetchComments(this.props.articleId).then(data => {
-      this.setState({
-        comments: data.comments.sort((a, b) => b.created_at - a.created_at)
-      });
-    });
+    api
+      .fetchComments(this.props.articleId)
+      .then(data => {
+        this.setState({
+          comments: data.comments.sort((a, b) => b.created_at - a.created_at)
+        });
+      })
+      .catch(console.log);
   };
 
   componentDidUpdate(prevProps) {
     if (this.props.articleId !== prevProps.articleId) {
-      api.fetchComments(this.props.articleId).then(data => {
-        this.setState({
-          comments: data.comments.sort((a, b) => b.created_at - a.created_at)
-        });
-      });
+      api
+        .fetchComments(this.props.articleId)
+        .then(data => {
+          this.setState({
+            comments: data.comments.sort((a, b) => b.created_at - a.created_at)
+          });
+        })
+        .catch(console.log);
     }
   }
 
@@ -125,12 +131,15 @@ class Comments extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { commentInput, comments } = this.state;
-    api.postComment(this.props.articleId, commentInput).then(comment => {
-      this.setState({
-        comments: [comment, ...comments],
-        commentInput: ''
-      });
-    });
+    api
+      .postComment(this.props.articleId, commentInput)
+      .then(comment => {
+        this.setState({
+          comments: [comment, ...comments],
+          commentInput: ''
+        });
+      })
+      .catch(console.log);
   };
 
   handleInput = e => {
@@ -144,7 +153,6 @@ class Comments extends Component {
   handleVoteCommentClick = (comment_id, amount) => {
     const { comments } = this.state;
     const newComments = [...comments];
-    api.voteOnComment(comment_id, amount);
     const index = newComments.findIndex(comment => {
       return comment._id === comment_id;
     });
@@ -152,9 +160,14 @@ class Comments extends Component {
       amount === 'up'
         ? newComments[index].votes + 1
         : newComments[index].votes - 1;
-    this.setState({
-      comments: newComments
-    });
+    api
+      .voteOnComment(comment_id, amount)
+      .then(
+        this.setState({
+          comments: newComments
+        })
+      )
+      .catch(console.log);
   };
 
   handleDeleteCommentClick = comment_id => {
@@ -162,10 +175,14 @@ class Comments extends Component {
     const newComments = [...comments].filter(
       comment => comment_id !== comment._id
     );
-    api.deleteComment(comment_id);
-    this.setState({
-      comments: newComments
-    });
+    api
+      .deleteComment(comment_id)
+      .then(
+        this.setState({
+          comments: newComments
+        })
+      )
+      .catch(console.log);
   };
 }
 

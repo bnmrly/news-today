@@ -4,15 +4,18 @@ import * as api from '../api.js';
 
 class ArticlesList extends Component {
   state = {
-    articleData: []
+    articleData: [],
+    loading: true
   };
 
   componentDidMount = () => {
     const topic = this.props.match.params.topic;
     const fetch = topic ? api.fetchArticlesByTopic : api.fetchArticles;
     fetch(topic).then(articles => {
+      console.log(articles);
       this.setState({
-        articleData: articles
+        articleData: articles,
+        loading: false
       });
     });
   };
@@ -22,16 +25,24 @@ class ArticlesList extends Component {
     if (this.props.match.params.topic !== prevProps.match.params.topic) {
       api.fetchArticlesByTopic(topic).then(data => {
         this.setState({
-          articleData: data
+          articleData: data,
+          loading: false
         });
       });
     }
   };
 
   render() {
-    const { articleData } = this.state;
-    if (!articleData.length) {
-      return <p>Loading...</p>;
+    const { articleData, loading } = this.state;
+    if (!articleData.length && loading) {
+      return <h3>Loading...</h3>;
+    } else if (!articleData.length && !loading) {
+      return (
+        <h3>
+          There are no articles on this topic, please click on logo above to
+          return to home...
+        </h3>
+      );
     } else {
       return (
         <article className="articles-all">
