@@ -14,11 +14,7 @@ const Topic = props => {
 
   return (
     <div>
-      <img
-        className="topic-image"
-        src={images[topic]}
-        alt={`${topic} Articles heading`}
-      />
+      <img className="topic-image" src={images[topic]} alt="" />
     </div>
   );
 };
