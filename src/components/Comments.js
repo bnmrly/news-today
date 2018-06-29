@@ -83,7 +83,7 @@ class Comments extends Component {
                       Votes: {comment.votes}
                     </li>
                   </ul>
-                  <div className="vote-up-container">
+                  <div className="vote-up-container--comment">
                     <img
                       className="vote-up-image pointer"
                       src={voteUp}
@@ -101,7 +101,7 @@ class Comments extends Component {
                       Vote &uarr;
                     </p>
                   </div>
-                  <div className="vote-down-container">
+                  <div className="vote-down-container--comment">
                     <img
                       className="vote-down-image pointer"
                       src={voteDown}

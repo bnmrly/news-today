@@ -42,3 +42,35 @@
 .pointer {
   cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+  .article-section {
+    flex-direction: column;
+  }
+}
+
+/* @media screen and (max-width: 600px) {
+  .article-individual,
+  .article-info,
+  .title_case,
+  .article-body {
+    width: 98%;
+  }
+} */
+
+@media screen and (max-width: 600px) {
+  .article-info {
+    width: 98%;
+    text-align: left;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-right: 0rem;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .vote-down-container {
+    margin-left: 1rem;
+  }
+}

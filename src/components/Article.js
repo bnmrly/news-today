@@ -50,7 +50,7 @@ class Article extends Component {
         <div className="article-section">
           <section className="article-individual">
             <h3 className="h3 title_case">{title.toLowerCase()}</h3>
-            <p>{body}</p>
+            <p className="article-body">{body}</p>
             <p>
               See more {belongs_to} articles
               <Link className="link" to={`/topics/${belongs_to}`}>
