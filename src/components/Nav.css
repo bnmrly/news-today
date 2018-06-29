@@ -36,3 +36,15 @@
 .nav-link__last-child .nav-link__last-child {
   padding-right: 1rem;
 }
+
+@media screen and (max-width: 330px) {
+  .nav-list {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .nav-link {
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  }
+}
