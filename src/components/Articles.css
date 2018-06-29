@@ -21,3 +21,15 @@
 .article-info__list--item {
   margin-bottom: 0.2rem;
 }
+
+@media screen and (max-width: 600px) {
+  .article-meta {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .article-meta__item {
+    margin-top: -0.6rem;
+  }
+}

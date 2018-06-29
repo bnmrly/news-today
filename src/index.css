@@ -396,3 +396,9 @@ a {
   margin-left: 1rem;
   margin-bottom: 3rem;
 }
+
+@media screen and (max-width: 600px) {
+  .left {
+    margin-left: 0;
+  }
+}
