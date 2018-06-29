@@ -55,7 +55,11 @@ class Comments extends Component {
               <div className="comments-item" key={comment._id}>
                 <section className="comment-individual">
                   <p className="comment-body">{comment.body}</p>
-                  <button className="button" type="submit">
+                  <button
+                    className="button"
+                    type="submit"
+                    onClick={() => this.handleDeleteCommentClick(comment._id)}
+                  >
                     Delete comment
                   </button>
                 </section>
@@ -67,11 +71,6 @@ class Comments extends Component {
                     <li className="comment-info__list--item">
                       Created {moment(comment.created_at).fromNow()}
                     </li>
-                    {/* <li className="comment-info__list--item">
-                      <button className="button" type="submit">
-                        Delete comment
-                      </button>
-                    </li> */}
                     <li className="comment-info__list--item">
                       Votes: {comment.votes}
                     </li>
@@ -112,9 +111,6 @@ class Comments extends Component {
                       Vote &darr;
                     </p>
                   </div>
-                  {/* <button className="button" type="submit">
-                    Delete comment
-                  </button> */}
                 </section>
               </div>
             );
@@ -154,6 +150,17 @@ class Comments extends Component {
       amount === 'up'
         ? newComments[index].votes + 1
         : newComments[index].votes - 1;
+    this.setState({
+      comments: newComments
+    });
+  };
+
+  handleDeleteCommentClick = comment_id => {
+    const { comments } = this.state;
+    api.deleteComment(comment_id);
+    const newComments = [...comments].filter(
+      comment => comment_id !== comment._id
+    );
     this.setState({
       comments: newComments
     });
