@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import './components/Articles.css';
 import Nav from './components/Nav';
@@ -8,6 +8,7 @@ import ArticlesList from './components/ArticlesList';
 import Footer from './components/Footer';
 import Article from './components/Article';
 import Topic from './components/Topic';
+import Error from './components/Error';
 
 class App extends Component {
   render() {
@@ -16,23 +17,26 @@ class App extends Component {
         <Header />
         <Nav />
         <main className="main-container">
-          <Route exact path="/" component={ArticlesList} />
-          <Route exact path="/articles" component={ArticlesList} />
-          <Route
-            exact
-            path="/articles/:article_id"
-            render={props => <Article {...props} />}
-          />
-          <Route
-            exact
-            path="/topics/:topic"
-            render={props => (
-              <React.Fragment>
-                <Topic {...props} />
-                <ArticlesList {...props} />
-              </React.Fragment>
-            )}
-          />
+          <Switch>
+            <Route exact path="/" component={ArticlesList} />
+            <Route exact path="/articles" component={ArticlesList} />
+            <Route
+              exact
+              path="/articles/:article_id"
+              render={props => <Article {...props} />}
+            />
+            <Route
+              exact
+              path="/topics/:topic"
+              render={props => (
+                <React.Fragment>
+                  <Topic {...props} />
+                  <ArticlesList {...props} />
+                </React.Fragment>
+              )}
+            />
+            <Route path="/404" component={Error} />
+          </Switch>
         </main>
         <Footer />
       </div>
