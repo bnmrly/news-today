@@ -55,13 +55,15 @@ class Comments extends Component {
               <div className="comments-item" key={comment._id}>
                 <section className="comment-individual">
                   <p className="comment-body">{comment.body}</p>
-                  <button
-                    className="button"
-                    type="submit"
-                    onClick={() => this.handleDeleteCommentClick(comment._id)}
-                  >
-                    Delete comment
-                  </button>
+                  {comment.created_by.username === 'tickle122' && (
+                    <button
+                      className="button"
+                      type="submit"
+                      onClick={() => this.handleDeleteCommentClick(comment._id)}
+                    >
+                      Delete comment
+                    </button>
+                  )}
                 </section>
                 <section className="comment-info">
                   <ul className="comment-info__list">
@@ -157,10 +159,10 @@ class Comments extends Component {
 
   handleDeleteCommentClick = comment_id => {
     const { comments } = this.state;
-    api.deleteComment(comment_id);
     const newComments = [...comments].filter(
       comment => comment_id !== comment._id
     );
+    api.deleteComment(comment_id);
     this.setState({
       comments: newComments
     });
