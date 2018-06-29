@@ -12,7 +12,6 @@ class ArticlesList extends Component {
     const topic = this.props.match.params.topic;
     const fetch = topic ? api.fetchArticlesByTopic : api.fetchArticles;
     fetch(topic).then(articles => {
-      console.log(articles);
       this.setState({
         articleData: articles,
         loading: false
