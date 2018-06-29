@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './Article.css';
 import voteUp from '../images/vote-up.png';
 import voteDown from '../images/vote-down.png';
+import { Redirect } from 'react-router-dom';
 
 class Article extends Component {
   state = {
@@ -31,11 +32,17 @@ class Article extends Component {
         }) => {
           this.setState({ belongs_to, body, comments, title, username, votes });
         }
-      );
+      )
+      .catch(err => {
+        this.setState({
+          invalidUrl: true
+        });
+      });
   };
 
   render() {
     const article_id = this.props.match.params.article_id;
+    if (this.state.invalidUrl) return <Redirect to="/404" />;
     const { belongs_to, body, comments, title, username, votes } = this.state;
     return (
       <div className="article-page-container">
