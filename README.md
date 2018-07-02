@@ -48,7 +48,7 @@ To deploy on a live system, set up a [Heroku](https://www.heroku.com/) app and l
 
 ## Design
 
-I have a keen interest in design and embraced the challenge of writing all the vanilla css myself, taking inspiration from the Amerian clothing brand [Supreme](https://www.supremenewyork.com/).
+I eschewed CSS frameworks as I wanted to combine my CSS and JavaScript skills on this project. I embraced the challenge of writing all the vanilla css myself, taking inspiration from the American skateboard clothing brand [Supreme](https://www.supremenewyork.com/).
 
 ## Author
 
