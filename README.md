@@ -4,7 +4,7 @@ News Today is a social news aggregation and rating website similar to Reddit, bu
 
 It has articles which are divided into topics. Each article has user ratings and can be voted up or down. Users can also add comments to an article and these comments can also be voted up or down. It is set up so a sample user ('tickle122') can both post and delete their own comments.
 
-It can be found here: insert heroku url
+It can be found here: [https://news-today-ben-marley.herokuapp.com/](https://news-today-ben-marley.herokuapp.com/)
 
 ## API
 
