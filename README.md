@@ -20,7 +20,7 @@ The app was built using Node 8.9.3 and cannot be guaranteed to work on an earlie
 
 ## Installing
 
-Please clone the repo from: [https://github.com/bnmrly/FE-FT-NC-News](https://github.com/bnmrly/FE-FT-NC-News)
+Please clone the repo from: [https://github.com/bnmrly/news-today](https://github.com/bnmrly/news-today)
 
 Run npm install in the command line to get the required dependencies.
 
