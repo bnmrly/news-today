@@ -10,7 +10,7 @@ It can be found here: [https://news-today-ben-marley.herokuapp.com/](https://new
 
 The API can be found at [https://ben-nc-news.herokuapp.com/API](https://ben-nc-news.herokuapp.com/API)
 
-The repo for the backend can be found here: [https://github.com/bnmrly/BE-FT-northcoders-news](https://github.com/bnmrly/BE-FT-northcoders-news)
+The repo for the backend can be found here: [https://github.com/bnmrly/news-today-back-end](https://github.com/bnmrly/news-today-back-end)
 
 ## Getting Started
 
@@ -44,7 +44,7 @@ localhost:3000/
 
 I have deployed the database to [mlab](https://mlab.com/).
 
-To deploy on a live system, set up a [Heroku](https://www.heroku.com/) app and link it to your fork of the GitHub repo [here](https://github.com/bnmrly/FE-FT-NC-News).
+To deploy on a live system, set up a [Heroku](https://www.heroku.com/) app and link it to your fork of the GitHub repo [here](https://github.com/bnmrly/news-today).
 
 ## Design
 
