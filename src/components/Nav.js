@@ -14,7 +14,7 @@ class Nav extends Component {
           </li>
           <li className="nav-list__item">
             <NavLink className="nav-link" to="/topics/cooking">
-              Cooking{' '}
+              Cooking
             </NavLink>
           </li>
           <li className="nav-list__item last-child">
@@ -22,7 +22,7 @@ class Nav extends Component {
               className="nav-link nav-link__last-child"
               to="/topics/football"
             >
-              Football{' '}
+              Football
             </NavLink>
           </li>
         </ul>
