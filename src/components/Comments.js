@@ -4,11 +4,13 @@ import './Comments.css';
 import moment from 'moment';
 import voteUp from '../images/vote-up.png';
 import voteDown from '../images/vote-down.png';
+import { Redirect } from 'react-router-dom';
 
 class Comments extends Component {
   state = {
     commentInput: '',
-    comments: []
+    comments: [],
+    invalidUrl: false
   };
 
   componentDidMount = () => {
@@ -19,7 +21,11 @@ class Comments extends Component {
           comments: data.comments.sort((a, b) => b.created_at - a.created_at)
         });
       })
-      .catch(console.log);
+      .catch(err => {
+        this.setState({
+          invalidUrl: true
+        });
+      });
   };
 
   componentDidUpdate(prevProps) {
@@ -31,12 +37,17 @@ class Comments extends Component {
             comments: data.comments.sort((a, b) => b.created_at - a.created_at)
           });
         })
-        .catch(console.log);
+        .catch(err => {
+          this.setState({
+            invalidUrl: true
+          });
+        });
     }
   }
 
   render() {
     const { comments } = this.state;
+    if (this.state.invalidUrl) return <Redirect to="/404" />;
     return (
       <div className="comments-container">
         <section className="post-comment">
@@ -131,15 +142,12 @@ class Comments extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { commentInput, comments } = this.state;
-    api
-      .postComment(this.props.articleId, commentInput)
-      .then(comment => {
-        this.setState({
-          comments: [comment, ...comments],
-          commentInput: ''
-        });
-      })
-      .catch(console.log);
+    api.postComment(this.props.articleId, commentInput).then(comment => {
+      this.setState({
+        comments: [comment, ...comments],
+        commentInput: ''
+      });
+    });
   };
 
   handleInput = e => {
@@ -160,14 +168,11 @@ class Comments extends Component {
       amount === 'up'
         ? newComments[index].votes + 1
         : newComments[index].votes - 1;
-    api
-      .voteOnComment(comment_id, amount)
-      .then(
-        this.setState({
-          comments: newComments
-        })
-      )
-      .catch(console.log);
+    api.voteOnComment(comment_id, amount).then(
+      this.setState({
+        comments: newComments
+      })
+    );
   };
 
   handleDeleteCommentClick = comment_id => {
@@ -175,14 +180,11 @@ class Comments extends Component {
     const newComments = [...comments].filter(
       comment => comment_id !== comment._id
     );
-    api
-      .deleteComment(comment_id)
-      .then(
-        this.setState({
-          comments: newComments
-        })
-      )
-      .catch(console.log);
+    api.deleteComment(comment_id).then(
+      this.setState({
+        comments: newComments
+      })
+    );
   };
 }
 

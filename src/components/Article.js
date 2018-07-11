@@ -109,14 +109,11 @@ class Article extends Component {
   handleVoteArticleClick = amount => {
     const { votes } = this.state;
     const article_id = this.props.match.params.article_id;
-    api
-      .voteOnArticle(article_id, amount)
-      .then(
-        this.setState({
-          votes: amount === 'up' ? votes + 1 : votes - 1
-        })
-      )
-      .catch(console.log);
+    api.voteOnArticle(article_id, amount).then(
+      this.setState({
+        votes: amount === 'up' ? votes + 1 : votes - 1
+      })
+    );
   };
 }
 
